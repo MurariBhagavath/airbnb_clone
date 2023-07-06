@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import {
   MagnifyingGlassIcon,
   GlobeAltIcon,
@@ -9,6 +9,7 @@ import {
 } from "@heroicons/react/24/solid";
 
 function Header() {
+  const [searchInput, setSearchInput] = useState("");
   return (
     <header className="sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md p-5 md:px-10">
       <div className="relative flex items-center h-10 cursor-pointer my-auto">
@@ -25,6 +26,8 @@ function Header() {
         <input
           className="text-sm text-gray-600 placeholder-gray-400 pl-5 bg-transparent outline-none flex-grow"
           type="text"
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
           placeholder="start your search"
         />
         <MagnifyingGlassIcon
@@ -41,6 +44,9 @@ function Header() {
           <UserCircleIcon className="h-6" />
         </div>
       </div>
+
+
+      <h1>Hello</h1>
     </header>
   );
 }
